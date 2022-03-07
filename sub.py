@@ -53,20 +53,19 @@ def prob_LMb_2(n):
         count += 1
 
         if (count >= 2 ** mescnt): # 2のべき乗数回目のループで中間報告
-            print("")
-            print(f"[info] clearcnt: {clearcnt}")
-            print(f"[info] over73: {over73} / {count}")
+            print(f"[info] over73: {over73} / {count}\n")
             mescnt += 1
     return over73, recboxes
 
-result, data = prob_LMb_2(100000000) # データ
-print(f"[Final Data] over73: {result} / 10 - from prob_LMb_2") # データ
+trials = 100000000
+result, data = prob_LMb_2(trials) # データ
+print(f"[Final Data] over73: {result} / {trials} - from prob_LMb_2") # データ
 
 # その他のデータ出力
 text = ""
-for i in range(0, 9):
+for i in range(0, 10):
     text = ""
-    for j in range(0, 9):
+    for j in range(0, 10):
         text += "["+str(i * 10 + j)+"]: "+str(data[i * 10 + j])+", "
     print("[data] "+text)
 
